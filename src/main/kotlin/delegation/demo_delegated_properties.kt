@@ -33,7 +33,6 @@ private class DelegateReadWriteProperty : ReadWriteProperty<Example, Any> {
         println("setValue() thisRef=$thisRef, property=${property.name}")
         internalValue = value
     }
-
 }
 
 fun main() {
