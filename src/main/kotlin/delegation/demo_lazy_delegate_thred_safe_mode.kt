@@ -25,6 +25,6 @@ fun main() {
             }
         }
     }
-    threads.forEach() { it.join() }
+    threads.forEach { it.join() }
     println("Thread is done!")
 }
