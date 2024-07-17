@@ -4,10 +4,13 @@ class LazySample {
     init {
         println("created!")
     }
-    val lazyStr: String by lazy {
+
+    private val lazy: Lazy<String> = lazy {
         println("computed!")
         "my lazy"
     }
+
+    val lazyStr: String by lazy
 }
 
 fun main() {
