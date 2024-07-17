@@ -1,0 +1,5 @@
+package delegation
+
+fun main() {
+
+}
