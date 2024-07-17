@@ -12,20 +12,23 @@ private class Example {
     var delegateReadWriteProperty by DelegateReadWriteProperty()
 }
 
-private class DelegateReadOnlyProperty: ReadOnlyProperty<Example, Any> {
+private class DelegateReadOnlyProperty : ReadOnlyProperty<Example, Any> {
     override fun getValue(thisRef: Example, property: KProperty<*>): Any {
         println("getValue() thisRef=$thisRef, property=${property.name}")
         return System.currentTimeMillis()
     }
 }
 
-private class DelegateReadWriteProperty: ReadWriteProperty<Example, Any> {
+private class DelegateReadWriteProperty : ReadWriteProperty<Example, Any> {
     var internalValue: Any = 10L
+
+    // read from local files, local db, in-memory cache, network, etc.
     override fun getValue(thisRef: Example, property: KProperty<*>): Any {
         println("getValue() thisRef=$thisRef, property=${property.name}")
         return internalValue
     }
 
+    // write to local files, local db, in-memory cache, network, etc.
     override fun setValue(thisRef: Example, property: KProperty<*>, value: Any) {
         println("setValue() thisRef=$thisRef, property=${property.name}")
         internalValue = value
