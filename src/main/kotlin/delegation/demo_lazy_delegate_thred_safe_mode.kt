@@ -1,6 +1,6 @@
 package delegation
 
-class LazySample {
+class LazySample1 {
     init {
         println("created!")
     }
