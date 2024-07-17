@@ -7,7 +7,7 @@ class LazySample1 {
         println("created!")
     }
 
-    // LazyThreadSafetyMode.SYNCHRONIZED default mode
+//    LazyThreadSafetyMode.SYNCHRONIZED is default mode
     private val lazy: Lazy<String> = lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
         println("computed!")
         "my lazy"
@@ -17,7 +17,7 @@ class LazySample1 {
 }
 
 fun main() {
-    val sample = LazySample()
+    val sample = LazySample1()
     val threads = List(1000) {
         thread {
             repeat(100) {
@@ -25,6 +25,6 @@ fun main() {
             }
         }
     }
-    threads.forEach { it.join() }
+    threads.forEach() { it.join() }
     println("Thread is done!")
 }
