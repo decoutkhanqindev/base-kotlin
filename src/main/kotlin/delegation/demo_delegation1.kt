@@ -26,7 +26,7 @@ class ApiV1 : ProductRepository {
 class ApiV2(apiDelegate: ProductRepository) : ProductRepository by apiDelegate {
     override fun findById(id: Int): Product {
         println("this is $this")
-        return Product(id, "abc")
+        return Product(id, "xyz")
     }
 }
 
