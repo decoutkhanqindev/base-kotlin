@@ -2,6 +2,7 @@ package exercises.oop
 
 import kotlin.math.sqrt
 
+// Shape base class and Polymorphic subclasses.
 interface Shape {
     fun area(): Double
     fun perimeter(): Double
