@@ -7,8 +7,8 @@ class LazySample1 {
         println("created!")
     }
 
-    //    LazyThreadSafetyMode.PUBLICATION
-    private val lazy: Lazy<String> = lazy(LazyThreadSafetyMode.PUBLICATION) {
+    //   LazyThreadSafetyMode.NONE
+    private val lazy: Lazy<String> = lazy(LazyThreadSafetyMode.NONE) {
         println("computed!")
         "my lazy" + Random.nextInt()
     }
