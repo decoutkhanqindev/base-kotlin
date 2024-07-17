@@ -28,9 +28,26 @@ class Logger private constructor() {
             return instance!!
         }
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return javaClass.hashCode()
+    }
 }
 
 fun main() {
     val log1 = Logger.getInstance()
-    println(log1.log("hello"))
+    val log2 = Logger.getInstance()
+
+    if (log1 == log2) {
+        println("log1=$log1 == log2=$log2 ")
+        println("SINGLETON PATTERN")
+    } else {
+        println("NOT SINGLETON PATTERN")
+    }
 }
