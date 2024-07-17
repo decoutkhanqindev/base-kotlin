@@ -12,6 +12,9 @@ class LazySample {
 
 fun main() {
     val sample = LazySample()
-    sample.lazyStr
-    sample.lazyStr
+    println(sample.lazyStr)
+    println(sample.lazyStr)
+    println(sample.lazyStr)
+    println(sample.lazyStr)
+
 }
