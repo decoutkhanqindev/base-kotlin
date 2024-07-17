@@ -22,7 +22,6 @@ class User {
     }
 }
 
-
 fun main() {
     val user = User()
     user.address = "<no-name>"
