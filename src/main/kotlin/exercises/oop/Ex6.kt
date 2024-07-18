@@ -9,7 +9,7 @@ interface Observable {
 }
 
 interface Observer {
-    fun update(message: String): Boolean
+    fun update(message: String)
 }
 
 class Publisher : Observable {
@@ -36,16 +36,14 @@ class Publisher : Observable {
 }
 
 class EmailNotification: Observer {
-    override fun update(message: String): Boolean {
+    override fun update(message: String) {
         println("Email notification received: $message")
-        return true
     }
 }
 
 class SMSNotification: Observer {
-    override fun update(message: String): Boolean {
+    override fun update(message: String) {
         println("SMS notification received: $message")
-        return true
     }
 }
 
