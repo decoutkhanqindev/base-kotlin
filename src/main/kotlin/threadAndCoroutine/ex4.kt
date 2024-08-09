@@ -43,12 +43,14 @@ class SyncCounter {
 
     fun count() {
         val thread1 = Thread {
+            println("Current thread to increment counter: ${Thread.currentThread().name}")
             repeat(10000) {
                 increment()
             }
         }
 
         val thread2 = Thread {
+            println("Current thread to increment counter: ${Thread.currentThread().name}")
             repeat(10000) {
                 increment()
             }
@@ -65,6 +67,8 @@ class SyncCounter {
 }
 
 fun main() {
+    println("Current thread: ${Thread.currentThread().name}")
+
     // val nonSync = NonSync()
     // nonSync.count()
     // -> in ra cac counter khac nhau
