@@ -1,5 +1,7 @@
 package threadAndCoroutine
 
+import kotlinx.coroutines.runBlocking
+
 class NonSync {
     // shared resource
     private var counter: Int = 0
