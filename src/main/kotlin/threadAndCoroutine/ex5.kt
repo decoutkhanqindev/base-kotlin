@@ -6,6 +6,7 @@ import kotlinx.coroutines.runBlocking
 import kotlin.coroutines.AbstractCoroutineContextElement
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
+import kotlinx.coroutines.withContext
 
 @OptIn(ExperimentalStdlibApi::class)
 suspend fun demoCoroutineContext() {
@@ -38,6 +39,28 @@ class MyCustomCoroutineContext(
     override fun toString(): String = "MyCustomCoroutineContext($name)"
 }
 
-fun main() = runBlocking {
-    demoCoroutineContext()
+suspend fun demoPrint() {
+    val currentContext: CoroutineContext = currentCoroutineContext()
+    val myCoroutineContext: MyCustomCoroutineContext? = currentContext[MyCustomCoroutineContext.Key]
+    println("currentCoroutineContext=$currentContext")
+    println("myCoroutineContext=$myCoroutineContext")
+    println("-".repeat(100))
+}
+
+fun main(): Unit = runBlocking {
+//    demoCoroutineContext()
+//    demoPrint()
+
+    // withContext: current context + new context = new context
+    withContext(MyCustomCoroutineContext("Outer 1")) {
+        demoPrint()
+
+        withContext(MyCustomCoroutineContext("Inner 1")) {
+            demoPrint()
+        }
+
+        withContext(MyCustomCoroutineContext("Inner 2")) {
+            demoPrint()
+        }
+    }
 }
