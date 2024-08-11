@@ -3,6 +3,7 @@
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.runBlocking
+import kotlin.coroutines.AbstractCoroutineContextElement
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 
@@ -25,6 +26,16 @@ suspend fun demoCoroutineContext() {
 
     // EmptyCoroutineContext ~ emptyMap
     println("EmptyCoroutineContext + ctx=${EmptyCoroutineContext + ctx}")
+}
+
+// element ~ singleton context
+class MyCustomCoroutineContext(
+    private val name: String
+) : AbstractCoroutineContextElement(key = Key) {
+
+    companion object Key : CoroutineContext.Key<MyCustomCoroutineContext>
+
+    override fun toString(): String = "MyCustomCoroutineContext($name)"
 }
 
 fun main() = runBlocking {
