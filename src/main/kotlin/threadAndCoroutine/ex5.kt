@@ -1,66 +1,72 @@
 ﻿package threadAndCoroutine
 
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.currentCoroutineContext
-import kotlinx.coroutines.runBlocking
 import kotlin.coroutines.AbstractCoroutineContextElement
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
 @OptIn(ExperimentalStdlibApi::class)
-suspend fun demoCoroutineContext() {
+suspend fun demo() {
     val ctx: CoroutineContext = currentCoroutineContext()
-    println("currentCoroutineContext=$ctx")
+    println(ctx)
 
-    val dispatcher: CoroutineDispatcher? = ctx[CoroutineDispatcher.Key]
-    print("CoroutineDispatcher=$dispatcher")
+    val dispatcher = ctx[CoroutineDispatcher.Key]
+    println("dispatcher=$dispatcher")
 
-    val count: Int = ctx.fold(0) { acc, e ->
+    val count = ctx.fold(initial = 0) { acc, e ->
         println("acc=$acc, e=$e")
         acc + 1
     }
-    println("count=$count")
+    println("count=${count}")
 
-    val minusDispatcher: CoroutineContext? = ctx.minusKey(CoroutineDispatcher.Key)
+    val minusDispatcher = ctx.minusKey(CoroutineDispatcher.Key)
     println("minusDispatcher=$minusDispatcher")
 
     // EmptyCoroutineContext ~ emptyMap
-    println("EmptyCoroutineContext + ctx=${EmptyCoroutineContext + ctx}")
+    println("EmptyCoroutineContext + ctx: ${EmptyCoroutineContext + ctx}")
+    println("EmptyCoroutineContext + ctx: ${ctx + EmptyCoroutineContext}")
 }
 
-// element ~ singleton context
-class MyCustomCoroutineContext(
+// Element == Singleton Context
+class MyDemoCoroutineContext(
     private val name: String
-) : AbstractCoroutineContextElement(key = Key) {
+): AbstractCoroutineContextElement(key = MyDemoCoroutineContext) {
 
-    companion object Key : CoroutineContext.Key<MyCustomCoroutineContext>
+    companion object Key: CoroutineContext.Key<MyDemoCoroutineContext>
 
-    override fun toString(): String = "MyCustomCoroutineContext($name)"
+    override fun toString(): String = "MyDemoCoroutineContext($name)"
 }
 
 suspend fun demoPrint() {
-    val currentContext: CoroutineContext = currentCoroutineContext()
-    val myCoroutineContext: MyCustomCoroutineContext? = currentContext[MyCustomCoroutineContext.Key]
-    println("currentCoroutineContext=$currentContext")
-    println("myCoroutineContext=$myCoroutineContext")
-    println("-".repeat(100))
+    val currentContext = currentCoroutineContext()
+    val myContext = currentContext[MyDemoCoroutineContext]
+    println("currentContext=$currentContext")
+    println("myContext=$myContext")
+    println("-".repeat(80))
 }
 
-fun main(): Unit = runBlocking {
-//    demoCoroutineContext()
-//    demoPrint()
+fun main() = runBlocking {
+//  println(mapOf(1 to "a", 2 to "b") + mapOf(1 to "C"))
+//  println(emptyMap<Int, String>() + mapOf(1 to "2", 2 to "c"))
+    demo()
 
-    // withContext: current context + new context = new context
-    withContext(MyCustomCoroutineContext("Outer 1")) {
+    withContext(EmptyCoroutineContext) {
+        demoPrint()
+    }
+
+    // withContext: current context + new context => new context
+    withContext(MyDemoCoroutineContext(name = "Outer 1")) {
         demoPrint()
 
-        withContext(MyCustomCoroutineContext("Inner 1")) {
+        withContext(MyDemoCoroutineContext(name = "Inner 1")) {
             demoPrint()
-        }
 
-        withContext(MyCustomCoroutineContext("Inner 2")) {
-            demoPrint()
+            withContext(MyDemoCoroutineContext(name = "Inner 2")) {
+                demoPrint()
+            }
         }
     }
 }
