@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 fun main(): Unit = runBlocking {
-    // handle exception in launch có tính chất lan truyền
+    // handle exception in launch có tính chất tu dong lan truyền exception
     // nếu scope 1 bị exception thi scope 2, 3 bi ~ cancel
     // sau do se lan truyen den root scope, root scope neu khong handle se bi ~ cancel
 
