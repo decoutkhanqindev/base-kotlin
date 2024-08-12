@@ -10,15 +10,17 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 fun main(): Unit = runBlocking {
-    val scope: CoroutineScope = CoroutineScope(
-        context = Dispatchers.Default + Job() +
-                CoroutineExceptionHandler { coroutineContext, throwable ->
-                    println("CoroutineExceptionHandler: throwable=$throwable")
-                    println("               coroutineContext=$coroutineContext")
-                    println("               job=${coroutineContext.job}")
-                    // crashlytics.logException(throwable)
-                }
-    )
+    // handle exception in launch có tính chất lan truyền
+    // nếu scope 1 bị exception thi scope 2, 3 bi ~ cancel
+    // sau do se lan truyen den root scope, root scope neu khong handle se bi ~ cancel
+
+    val scope: CoroutineScope = // root scope
+        CoroutineScope(context = Dispatchers.Default + Job() + CoroutineExceptionHandler { coroutineContext, throwable ->
+            println("CoroutineExceptionHandler: throwable=$throwable")
+            println("               coroutineContext=$coroutineContext")
+            println("               job=${coroutineContext.job}")
+            // crashlytics.logException(throwable)
+        })
 
     scope.launch {
         println("launch 1")
