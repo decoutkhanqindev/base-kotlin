@@ -22,4 +22,6 @@ fun main(): Unit = runBlocking {
 
     println("main: I'm tired of waiting!")
     job.cancel() // cancel job
+    job.join() // wait for job completed
+    println("main: Now I can quit.")
 }
