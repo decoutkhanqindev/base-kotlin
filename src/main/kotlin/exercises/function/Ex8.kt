@@ -9,6 +9,6 @@ fun main() {
     println("BMI: $bmi")
 }
 
-fun calculateBMI(height: Double, weight: Double) : Double {
+fun calculateBMI(height: Double, weight: Double): Double {
     return weight / (height * height)
 }

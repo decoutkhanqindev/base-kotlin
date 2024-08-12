@@ -4,20 +4,20 @@ interface Base {
     fun printVal()
 }
 
-class BaseImpl (private val x: Int) : Base {
+class BaseImpl(private val x: Int) : Base {
     override fun printVal() {
         println("Value: $x")
     }
 }
 
-class OtherBaseImpl (private val x: Int) :Base {
+class OtherBaseImpl(private val x: Int) : Base {
     override fun printVal() {
         println("Other value: $x")
     }
 
 }
 
-class Derived (b: Base) : Base by b
+class Derived(b: Base) : Base by b
 
 fun main() {
     val b = BaseImpl(19)

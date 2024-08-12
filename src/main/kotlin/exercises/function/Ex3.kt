@@ -7,7 +7,7 @@ fun main() {
     println(countVowelChar(str))
 }
 
-fun countVowelChar(str: String) : Int {
+fun countVowelChar(str: String): Int {
     val vowels = arrayOf('a', 'e', 'i', 'o', 'u')
     var count = 0
     for (i in str) {

@@ -1,7 +1,5 @@
 package exercises.function
 
-import java.lang.Double.sum
-
 //  Viết một hàm Kotlin lấy một số đối số thay đổi (varargs) và tính trung bình của các số đó.
 
 fun main() {
@@ -12,6 +10,6 @@ fun main() {
     println("Average 2: $average2")
 }
 
-fun calculateAvg(vararg numbers: Double) : Double {
+fun calculateAvg(vararg numbers: Double): Double {
     return numbers.sum() / numbers.size
 }

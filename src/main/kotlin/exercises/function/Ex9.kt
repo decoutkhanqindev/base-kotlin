@@ -9,6 +9,6 @@ fun main() {
     println("The area of the circle with radius $radius is $area")
 }
 
-fun calculateCircleArea(radius: Double) : Double {
+fun calculateCircleArea(radius: Double): Double {
     return PI * radius * radius
 }

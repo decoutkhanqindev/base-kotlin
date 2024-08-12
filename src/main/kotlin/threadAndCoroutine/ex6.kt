@@ -3,9 +3,8 @@ package threadAndCoroutine
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.runBlocking
-import java.util.concurrent.Executors
-import kotlin.coroutines.EmptyCoroutineContext
 import kotlinx.coroutines.withContext
+import java.util.concurrent.Executors
 
 fun main(): Unit = runBlocking {
     val dispatcher1 = Dispatchers.IO

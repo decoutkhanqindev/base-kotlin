@@ -8,7 +8,7 @@ fun main() {
 }
 
 fun printNumbers(n: Int) {
-    for (i in 1 .. n) {
+    for (i in 1..n) {
         println(i)
     }
 }

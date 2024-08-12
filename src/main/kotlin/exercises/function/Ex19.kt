@@ -10,6 +10,6 @@ fun main() {
     println("$number2 is divisible by $number1: ${number2.isDivisibleBy(number1)}")
 }
 
-infix fun  Int.isDivisibleBy(divisor: Int) : Boolean {
+infix fun Int.isDivisibleBy(divisor: Int): Boolean {
     return this % divisor == 0
 }

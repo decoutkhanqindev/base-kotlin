@@ -9,7 +9,7 @@ fun main() {
     print(reverseString(str))
 }
 
-fun reverseString(str: String) : String {
+fun reverseString(str: String): String {
     val rvStr = StringBuilder()
     for (i in (str.length - 1) downTo 0) {
         rvStr.append(str[i])

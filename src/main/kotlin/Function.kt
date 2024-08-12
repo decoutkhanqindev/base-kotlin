@@ -72,6 +72,6 @@ class A {
 }
 
 // ham mo rong
-fun doMore (v: Int) {
+fun doMore(v: Int) {
     println("doMore $v")
 }

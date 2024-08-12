@@ -5,7 +5,7 @@ package exercises.classes
 class Employee(
     val name: String,
     val age: Int,
-    val designation: String
+    val designation: String,
 ) {
     override fun toString(): String {
         return "Employee(name='$name', age=$age, designation='$designation')"

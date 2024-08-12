@@ -2,6 +2,7 @@ package delegation
 
 import kotlin.concurrent.thread
 import kotlin.random.Random
+
 class LazySample1 {
     init {
         println("created!")

@@ -8,7 +8,7 @@ fun main() {
     println("Is $number a prime number? $isNumberPrime")
 }
 
-fun isPrime(n: Int) : Boolean {
+fun isPrime(n: Int): Boolean {
     if (n <= 1) return false
     for (i in 2 until n) {
         if (n % i == 0) return false

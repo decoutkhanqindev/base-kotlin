@@ -11,7 +11,7 @@ fun main() {
 
 fun generateMultiplicationTable(number: Int) {
     var res = 0
-    for (i in 1 .. 10){
+    for (i in 1..10) {
         res = number * i
         println("$number * $i = $res")
     }

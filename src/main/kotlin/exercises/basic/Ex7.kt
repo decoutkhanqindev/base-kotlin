@@ -1,7 +1,5 @@
 package exercises.basic
 
-import kotlin.math.min
-
 fun main(args: Array<String>) {
     val num1 = 10
     val num2 = 90

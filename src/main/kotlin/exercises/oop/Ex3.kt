@@ -4,12 +4,12 @@ package exercises.oop
 //  to represent the result of an operation. Use pattern matching to handle different result types.
 
 sealed class Result {
-    data class Success(val data: String): Result()
-    data class Failure(val message: String): Result()
+    data class Success(val data: String) : Result()
+    data class Failure(val message: String) : Result()
 }
 
 fun processResult(result: Result): String {
-    return when(result) {
+    return when (result) {
         is Result.Success -> "Process is successful with data = ${result.data}"
         is Result.Failure -> "Process is fail with error message = ${result.message}"
     }

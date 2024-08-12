@@ -1,12 +1,12 @@
 ﻿package threadAndCoroutine
 
-import kotlin.coroutines.AbstractCoroutineContextElement
-import kotlin.coroutines.CoroutineContext
-import kotlin.coroutines.EmptyCoroutineContext
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import kotlin.coroutines.AbstractCoroutineContextElement
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.EmptyCoroutineContext
 
 @OptIn(ExperimentalStdlibApi::class)
 suspend fun demo() {
@@ -32,10 +32,10 @@ suspend fun demo() {
 
 // Element == Singleton Context
 class MyDemoCoroutineContext(
-    private val name: String
-): AbstractCoroutineContextElement(key = MyDemoCoroutineContext) {
+    private val name: String,
+) : AbstractCoroutineContextElement(key = MyDemoCoroutineContext) {
 
-    companion object Key: CoroutineContext.Key<MyDemoCoroutineContext>
+    companion object Key : CoroutineContext.Key<MyDemoCoroutineContext>
 
     override fun toString(): String = "MyDemoCoroutineContext($name)"
 }

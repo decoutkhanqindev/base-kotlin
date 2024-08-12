@@ -5,9 +5,9 @@ fun main() {
     var y = 10
 
     // + - *  / % ++ -- giong nhu java
-    println("x + y = ${x+y}")
-    println("x - y = ${x-y}")
-    println("x * y = ${x*y}")
+    println("x + y = ${x + y}")
+    println("x - y = ${x - y}")
+    println("x * y = ${x * y}")
     println("x / y = ${x / y}")
     println("x % y = ${x % y}")
     println("++x = ${++x}")
@@ -34,7 +34,7 @@ fun main() {
     println("${m !is String}")
 
     // || && !
-    println("${x>5 && y< 10}")
+    println("${x > 5 && y < 10}")
 
     // toan tu bit
     //& ! ^ ~ << >> >>>

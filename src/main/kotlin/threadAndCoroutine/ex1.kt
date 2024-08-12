@@ -23,6 +23,6 @@ fun main() {
 //    val myThread = MyThread()
 //    myThread.start()
 
-    val  myThread = Thread(MyRunnable())
+    val myThread = Thread(MyRunnable())
     myThread.start()
 }

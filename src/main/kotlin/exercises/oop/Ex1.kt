@@ -8,7 +8,7 @@ interface Shape {
     fun perimeter(): Double
 }
 
-class Circle (private val radius: Double) : Shape {
+class Circle(private val radius: Double) : Shape {
     override fun area(): Double {
         return Math.PI * radius * radius
     }
@@ -18,7 +18,7 @@ class Circle (private val radius: Double) : Shape {
     }
 }
 
-class Rectangle (private val width: Double, private val height: Double) : Shape {
+class Rectangle(private val width: Double, private val height: Double) : Shape {
     override fun area(): Double {
         return width * height
     }
@@ -46,5 +46,5 @@ fun main() {
 
     val shapes = listOf(circle, rectangle, triangle)
 
-    shapes.forEach { println("$it -> area=${it.area()}, perimeter=${it.perimeter()}")}
+    shapes.forEach { println("$it -> area=${it.area()}, perimeter=${it.perimeter()}") }
 }

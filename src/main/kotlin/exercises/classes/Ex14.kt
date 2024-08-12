@@ -7,11 +7,12 @@ class MathUtils {
         fun factorial(num: Int): Int {
             if (num == 0 || num == 1) return 1
             var res = 0
-            for (i in 0 .. num) res *= i
+            for (i in 0..num) res *= i
             return res
         }
     }
 }
+
 fun sqrt(n: Double): Double {
     return kotlin.math.sqrt(n)
 }

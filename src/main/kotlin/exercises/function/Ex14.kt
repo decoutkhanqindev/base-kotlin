@@ -10,6 +10,6 @@ fun main() {
     println("$num2 is positive: ${isPositive(num2)}")
 }
 
-fun isPositive(number: Int) : Boolean {
+fun isPositive(number: Int): Boolean {
     return number > 0
 }

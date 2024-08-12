@@ -1,7 +1,7 @@
 fun main() {
     val list = listOf(1, 2, 3, 4, 5)
     println("--for--")
-    for (i in 0 .. list.size) {
+    for (i in 0..list.size) {
         print("${list[i]} ")
     }
     println("\n------")

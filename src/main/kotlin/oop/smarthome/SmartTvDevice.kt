@@ -24,7 +24,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     private var channelNumber by RangeRegular(initialValue = 1, minValue = 0, maxValue = 200)
 
     override fun turnOn() {
-       super.turnOn()
+        super.turnOn()
         println(
             "$name is turned on. Speaker volume is set to $speakerVolume and channel number is " +
                     "set to $channelNumber."

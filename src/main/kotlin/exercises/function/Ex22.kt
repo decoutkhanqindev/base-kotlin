@@ -14,7 +14,7 @@ fun main() {
     println("Geometric Sum: $geometricSum")
 }
 
-fun <T: Number> calculateSeriesSum(firstTerm: T, commonDiffRatio: T, numTerms: Int) : Double {
+fun <T : Number> calculateSeriesSum(firstTerm: T, commonDiffRatio: T, numTerms: Int): Double {
     require(numTerms > 0) { "Number of terms must be greater than 0." }
 
     val a = firstTerm.toDouble()
@@ -28,6 +28,7 @@ fun <T: Number> calculateSeriesSum(firstTerm: T, commonDiffRatio: T, numTerms: I
                 a * (1 - commonDiffRatio.pow(n)) / (1 - commonDiffRatio)
             }
         }
+
         is Int -> {
             if (commonDiffRatio == 0) {
                 a * n
@@ -35,6 +36,7 @@ fun <T: Number> calculateSeriesSum(firstTerm: T, commonDiffRatio: T, numTerms: I
                 (n / 2) * (2 * a + (n - 1) * commonDiffRatio)
             }
         }
+
         else -> throw IllegalArgumentException("Unsupported data type for common difference/ratio.")
     }
 }

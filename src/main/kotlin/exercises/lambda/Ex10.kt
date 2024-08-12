@@ -9,6 +9,6 @@ fun main() {
 //        }
 //        return max
 //    }
-    val maxElement: (Array<Int>) -> Int = {numbers -> numbers.max()}
+    val maxElement: (Array<Int>) -> Int = { numbers -> numbers.max() }
     println(maxElement(arrayOf(5, 7, 8, 3, 2, 4, 12, 6)))
 }

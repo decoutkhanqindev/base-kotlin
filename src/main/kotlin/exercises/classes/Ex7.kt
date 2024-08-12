@@ -6,7 +6,7 @@ import kotlin.math.PI
 class Circle(
     val radius: Double,
     val centerX: Double,
-    val centerY: Double
+    val centerY: Double,
 ) {
     fun calculateCircumference(): Double {
         return 2 * PI * radius

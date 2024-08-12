@@ -1,7 +1,5 @@
 package exercises.oop
 
-import kotlin.js.ExperimentalJsReflectionCreateInstance
-
 
 // Write a Kotlin object-oriented program that implements a singleton pattern for a class Logger to provide logging functionality throughout the  application.
 

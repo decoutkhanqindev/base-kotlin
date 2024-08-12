@@ -31,17 +31,17 @@ class Publisher : Observable {
 
     fun publishMessage(message: String) {
         println("Publishing message: $message")
-        observers.forEach {it.update(message)}
+        observers.forEach { it.update(message) }
     }
 }
 
-class EmailNotification: Observer {
+class EmailNotification : Observer {
     override fun update(message: String) {
         println("Email notification received: $message")
     }
 }
 
-class SMSNotification: Observer {
+class SMSNotification : Observer {
     override fun update(message: String) {
         println("SMS notification received: $message")
     }

@@ -9,7 +9,7 @@ fun main() {
     println("i = $i")
 
     // byte
-    val b : Byte = 5
+    val b: Byte = 5
     println("b = $b")
 
     // long
@@ -45,7 +45,7 @@ fun main() {
     println("p = ${p.second}")
     val p1 = Pair<Long, Boolean>(9, true)
     println("p1 = $p1")
-    val p2:Pair<Int, Boolean> = p // var p2:Pair<Long, Boolean> = Pair(4, false)
+    val p2: Pair<Int, Boolean> = p // var p2:Pair<Long, Boolean> = Pair(4, false)
     println("p2 = $p2")
     val p3 = Pair("abc", true)
     println("p3 = $p3")
@@ -72,9 +72,14 @@ fun main() {
     println("s2 = $s2")
 
     // map luu tru cac cap gia tri khong trung lap
-    val m1 = mapOf("a" to 1, "b" to 2, "c" to 3) // val m:Map<String, Int> = mapOf<String, Int>("a" to 1, "b" to 2, "c" to 3)
+    val m1 =
+        mapOf("a" to 1, "b" to 2, "c" to 3) // val m:Map<String, Int> = mapOf<String, Int>("a" to 1, "b" to 2, "c" to 3)
     println("m1 = $m1")
-    val m2 = mutableMapOf("a" to 1, "b" to 2, "c" to 3) // val m:MutableMap<String, Int> = mutableMapOf<String, Int>("a" to 1, "b" to 2, "c" to 3)
+    val m2 = mutableMapOf(
+        "a" to 1,
+        "b" to 2,
+        "c" to 3
+    ) // val m:MutableMap<String, Int> = mutableMapOf<String, Int>("a" to 1, "b" to 2, "c" to 3)
     m2["d"] = 4 // m2.put("d", 4)
     println("m2 = $m2")
 }

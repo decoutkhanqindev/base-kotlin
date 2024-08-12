@@ -60,7 +60,7 @@ open class Human2(open var name: String, open var year: Int) {
 class Student2(
     id: Int = 0,
     name: String = "",
-    year: Int = 0
+    year: Int = 0,
 ) : Human2(name, year) {
 
     var id: Int = id

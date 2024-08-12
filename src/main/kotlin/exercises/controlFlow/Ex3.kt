@@ -12,13 +12,13 @@ fun main() {
     }
 }
 
-fun isVowel (char: Char) : Boolean {
-    return when(char.lowercaseChar()) {
+fun isVowel(char: Char): Boolean {
+    return when (char.lowercaseChar()) {
         'a', 'e', 'i', 'o', 'u' -> true
         else -> false
     }
 }
 
-fun isConsonant(char: Char) : Boolean {
+fun isConsonant(char: Char): Boolean {
     return !isVowel(char) && char.isLetter()
 }

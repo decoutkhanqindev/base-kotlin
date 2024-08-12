@@ -13,7 +13,7 @@ class RangeRegular(initialValue: Int, private val minValue: Int, private val max
     }
 
     override fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {
-        if (value in minValue .. maxValue) {
+        if (value in minValue..maxValue) {
             fieldData = value
         }
     }
