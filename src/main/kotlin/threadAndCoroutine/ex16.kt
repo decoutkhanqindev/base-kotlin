@@ -18,11 +18,14 @@ import kotlinx.coroutines.currentCoroutineContext
 fun main(): Unit = runBlocking {
     var counter: Int = 0
 
+    val lock = Any()
+
     withContext(Dispatchers.Default) {
         repeat(1000) {
             launch {
-                delay(500)
-                counter++
+                synchronized(lock) {
+                    counter++
+                }
             }
         }
 
