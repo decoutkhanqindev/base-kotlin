@@ -13,7 +13,21 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.cancelAndJoin
+import kotlinx.coroutines.currentCoroutineContext
 
 fun main(): Unit = runBlocking {
+    var counter: Int = 0
 
+    withContext(Dispatchers.Default) {
+        repeat(1000) {
+            launch {
+                delay(500)
+                counter++
+            }
+        }
+
+        println("Current thread in coroutine=${currentCoroutineContext()}")
+    }
+
+    println("Counter=$counter Current thread in coroutine=${currentCoroutineContext()}")
 }
