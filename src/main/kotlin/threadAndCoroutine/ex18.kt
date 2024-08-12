@@ -12,6 +12,8 @@ import kotlinx.coroutines.plus
 import kotlinx.coroutines.runBlocking
 
 fun main(): Unit = runBlocking {
+    // SupervisorJob co tinh chat cancel doc lap -> cac child cua scope co the cancel doc lap nhau
+
     val scope: CoroutineScope = CoroutineScope(
         context = Dispatchers.Default + SupervisorJob() +
                 CoroutineExceptionHandler { coroutineContext, throwable ->
@@ -34,6 +36,7 @@ fun main(): Unit = runBlocking {
         delay(1000)
         println("launch 2 done")
     }
+
     scope.launch {
         println("launch 3")
         delay(100)
