@@ -14,18 +14,24 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.sync.Mutex
 
 fun main(): Unit = runBlocking {
     var counter: Int = 0
 
-    val lock = Any()
+//    val lock = Any()
 
+    val mutex = Mutex()
     withContext(Dispatchers.Default) {
         repeat(1000) {
             launch {
-                synchronized(lock) {
-                    counter++
-                }
+//                synchronized(lock) {
+//                    counter++
+//                }
+
+                mutex.lock() // truoc khi truy cap thi lock
+                counter++
+                mutex.unlock() // sau khi truy cap thi unlock
             }
         }
 
