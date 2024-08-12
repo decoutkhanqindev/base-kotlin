@@ -15,6 +15,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 fun main(): Unit = runBlocking {
     var counter: Int = 0
@@ -29,9 +30,13 @@ fun main(): Unit = runBlocking {
 //                    counter++
 //                }
 
-                mutex.lock() // truoc khi truy cap thi lock
-                counter++
-                mutex.unlock() // sau khi truy cap thi unlock
+//                mutex.lock() // truoc khi truy cap thi lock
+//                counter++
+//                mutex.unlock() // sau khi truy cap thi unlock
+
+                mutex.withLock {
+                    counter++
+                }
             }
         }
 
