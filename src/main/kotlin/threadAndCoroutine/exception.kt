@@ -16,7 +16,7 @@ fun main(): Unit = runBlocking {
   // sau do se lan truyen den root scope
   
   // handle exception với async sẽ có tính chất doc lap exception
-  // nếu scope 1 bị exception can phai handle ket qua cua cua scope, cac scope con lai van tiep tuc
+  // nếu scope 1 bị exception can phai handle ket qua cua cua scope do, cac scope con lai van tiep tuc
   
   val scope: CoroutineScope = // root scope
     CoroutineScope(
