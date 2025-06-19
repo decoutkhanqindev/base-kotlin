@@ -2,8 +2,8 @@
   <library name="Maven: org.jetbrains.kotlin:kotlin-reflect:Latest" type="repository">
     <properties maven-id="org.jetbrains.kotlin:kotlin-reflect:LATEST" />
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.1.0-RC/kotlin-reflect-2.1.0-RC.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.1.0-RC/kotlin-stdlib-2.1.0-RC.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.1.0/kotlin-reflect-2.1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.1.0/kotlin-stdlib-2.1.0.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar!/" />
     </CLASSES>
     <JAVADOC />
