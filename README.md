@@ -1,4 +1,4 @@
-# 📚 Basic Kotlin Learning Project
+# 📚 Learning Kotlin Basic  
 
 ## 📃 Introduction
 
