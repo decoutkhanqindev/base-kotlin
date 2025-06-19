@@ -1,7 +1,5 @@
 # 📚 Learning Kotlin Basics
 
-## 📃 Introduction
-
 This repository compiles examples, exercises, and fundamental knowledge about the Kotlin programming language. It is suitable for beginners to get familiar with Kotlin through practical examples, small exercises, and important topics such as OOP, lambda, coroutine, etc.
 
 ## 🏆 Main Topics
